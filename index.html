@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A web page on Fake Social Media Accounts and Their Detection">
+    <title>Fake Social Media Accounts and Their Detection</title>
+    <!-- Font Awesome for social media icons -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+       
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            animation: fadeIn 2s ease-out; 
+        }
+        
+        
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            margin: 0 10px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.3s, color 0.3s, transform 0.3s; 
+        }
+
+        nav a:hover {
+            background-color: #fff;
+            color: #333;
+            border-radius: 5px;
+            transform: scale(1.1); 
+        }
+
+        section {
+            padding: 40px;
+            margin: 20px auto;
+            max-width: 1200px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1s ease forwards; 
+            animation-delay: 0.2s;
+        }
+
+        section:nth-child(even) {
+            animation-delay: 0.4s; 
+        }
+
+        section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+            position: relative;
+        }
+
+        section h2::before {
+            content: "";
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background-color: #4CAF50;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .content img {
+            width: 100%;
+            height: 450px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease; 
+        }
+
+        .content img:hover {
+            transform: scale(1.05); 
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            color: #555;
+            text-align: justify;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            animation: fadeIn 1.5s ease-in-out; 
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 16px;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 24px;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2); 
+            color: #4CAF50; 
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+
+/* Styles for circular images in the Types and Tools sections */
+section .circular-img {
+    width: 80px; /* Fixed width for smaller size */
+    height: 80px; /* Fixed height for circular shape */
+    border-radius: 50%; /* Makes the image circular */
+    margin-right: 15px; /* Space between image and description */
+    float: left; /* Positions the image to the left of the description */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for a 3D effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adds hover effect */
+}
+
+section .circular-img:hover {
+    transform: scale(1.1); /* Slightly enlarges the image on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+/* Ensures the text wraps around the image */
+section p {
+    overflow: hidden; /* Clears float so text wraps properly around the image */
+    line-height: 1.8;
+    font-size: 18px;
+    color: #555;
+}
+
+
+
+
+
+        /* Keyframe animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+
+        <h1>Fake Social Media Accounts and Their Detection</h1>
+    
+    </header>
+
+    <nav>
+        <a href="#overview">Overview</a>
+        <a href="#impact">Impact</a>
+        <a href="#types">Types of Fake Accounts</a>
+        <a href="#detection">Detection Methods</a>
+        <a href="#tools">Detection Tools</a>
+        <a href="#conclusion">Conclusion</a>
+    </nav>
+
+    <div class="content">
+        <!-- Overview Section -->
+        <section id="overview">
+            <h2>Overview of the Problem</h2>
+            
+            <p><strong>Fake social media accounts are profiles created with false or misleading information.</strong></p>
+            <p><strong>They are used for malicious activities such as spreading misinformation, conducting scams, impersonating individuals or organizations, and facilitating cybercrimes.</strong></p>
+            <p><strong>These accounts may be automated bots, accounts with stolen identities, or fake profiles designed to trick users. Impact on Social Platforms and Society</strong></p>           
+            <p><strong>Social platforms lose trust when they cannot control the spread of misinformation, fraud, or spam.</strong></p>
+            <p><strong>Businesses and public figures are targeted through impersonation accounts, damaging their reputation and credibility.</strong></p>
+            <p><strong>Users' personal security can be compromised through phishing scams, leading to identity theft or financial loss.</strong></p>
+             
+            
+        </section>
+
+        <!-- Impact Section -->
+        <section id="impact">
+            <h2>Impact on Social Platforms and Society</h2>
+            <p>
+             <strong>  Security Risks and Cybercrime:</strong>
+                    accounts often attempt phishing and scams to deceive users into sharing personal data or financial information. They may masquerade as official profiles to conduct fraud or identity theft.
+                They can also be used to distribute malware, which compromises user security and puts sensitive information at risk.
+            </p>    
+            <p>
+             <strong>  Disruption of Public Discourse and Community Standards</strong>
+                    Coordinated fake accounts can distort public discourse, amplifying certain voices and drowning out others to push agendas or polarize communities.
+                They contribute to the spread of hate speech, harassment, and trolling, making online spaces feel unsafe or unwelcoming for users.
+            </p>
+            <p>
+             <strong> Spread of Misinformation and Harmful Content</strong>
+                    Fake accounts are commonly used to disseminate false or misleading information, particularly during sensitive events like elections, public health crises, or social movements.
+                This misinformation can lead to real-world consequences, such as influencing public opinion, inciting fear, and even causing physical harm during times of crisis.
+            </p>
+        </section>
+
+
+
+
+        <section id="types">
+            <h2>Types of Fake Social Media Accounts</h2>
+            <p>
+                <img src="./bot icon.png" alt="Bot Account" class="circular-img">
+                <strong>1. Bot Accounts:</strong> These are programs designed to automatically perform tasks such as posting content, liking, or sharing posts in large quantities.
+
+            </p>
+            <p>
+                <img src="Impersonation Accounts.png" alt="Impersonation Account" class="circular-img">
+                <strong>2. Impersonation Accounts:</strong> These accounts are created to mimic real individuals, companies, or celebrities
+            </p>
+
+            <p>
+                <img src="Scam or Phishing Accounts.png" alt="Impersonation Account" class="circular-img">
+                <strong>3. Scam or Phishing Accounts:</strong> Accounts designed specifically for deceiving users, often aiming to steal personal information, money, or credentials.
+
+            </p>
+
+            <p>
+                <img src="Clickbait or Engagement Farming Accounts.png" alt="Impersonation Account" class="circular-img">
+                <strong>4. Clickbait or Engagement Farming Accounts:</strong>These accounts generate sensational, misleading content to attract clicks, likes, or shares.
+
+            </p>
+
+            <p>
+                <img src="Fake Follower Accounts.png" alt="Impersonation Account" class="circular-img">
+                <strong>5. Fake Follower Accounts:</strong>Purchased or automated accounts used to artificially inflate follower counts, likes, or engagement
+            </p>
+
+            <!-- Continue similarly for other types -->
+        </section>
+        
+
+
+        <!-- Detection Methods Section -->
+        <section id="detection">
+            <h2>Detection Methods</h2>
+           
+            <p>
+                Detection of fake accounts is accomplished through a combination of AI and behavioral analysis. Key methods include:
+            </p>
+            <p>
+                <strong>Behavioral Analysis:</strong> Monitoring posting patterns, engagement levels, and abnormal activity to detect suspicious accounts.
+            </p>
+            <p>
+                <strong>Profile Completeness:</strong> Fake accounts often have incomplete or inconsistent profile information, which can be flagged by detection tools.
+            </p>
+            <p>
+                <strong>Natural Language Processing (NLP):</strong> Analyzing the language used in posts or messages to identify bot-generated or repetitive content.
+            </p>
+        </section>
+
+
+
+
+
+        <!-- Detection Tools Section -->
+        <section id="tools">
+            <h2>Detection Tools for Fake Accounts</h2>
+            <p>
+                <img src="Botometer.jpeg" alt="Botometer Tool" class="circular-img">
+                <strong>Botometer:</strong> Analyzes Twitter accounts and assigns a bot score based on activity patterns.
+            </p>
+            <p>
+                <img src="Hoaxy.jpeg" alt="Hoaxy Tool" class="circular-img">
+                <strong>Hoaxy:</strong> Tracks the spread of misinformation and visualizes how fake news propagates.
+            </p>
+            <p>
+                <img src="social fingerprint.png" alt="Social Fingerprint Tool" class="circular-img">
+                <strong>Social Fingerprint:</strong> Detects fake followers and unnatural engagement, particularly useful on platforms like Instagram.
+            </p>
+            <p>
+                <img src="reverse image.png" alt="Reverse Image Search Tool" class="circular-img">
+                <strong>Reverse Image Search:</strong> Tools like Google Reverse Image Search help detect fake accounts using stolen profile images.
+            </p>
+        </section>
+        
+
+
+        <!-- Conclusion Section -->
+        <section id="conclusion">
+            <h2>Conclusion</h2>
+           
+            <p>
+                Fake social media accounts continue to be a major threat to online safety, spreading misinformation and enabling cybercrimes.
+                Detection and removal are critical for safeguarding users and restoring trust in online platforms.
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Fake Social Media Accounts Detection Project :::: BY Vaibhav suresh kamble :::: </p>
+
+    </footer>
+</body>
+</html>
